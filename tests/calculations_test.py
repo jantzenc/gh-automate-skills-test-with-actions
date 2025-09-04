@@ -1,6 +1,7 @@
 # System Modules
 import sys
 import os
+import pytest
 
 # Installed Modules
 # None
@@ -75,7 +76,5 @@ def test_get_nth_fibonacci_negative():
     n = -5
 
     # Act
-    result = get_nth_fibonacci(n)
-
-    # Assert
-    assert result == 0
+    with pytest.raises(ValueError):
+        get_nth_fibonacci(n)
